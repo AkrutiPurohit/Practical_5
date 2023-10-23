@@ -1,0 +1,75 @@
+//write a c++ program to demonstrate order of constructor calls in multiple inheritance
+
+#include<iostream>
+using namespace std;
+
+class details
+{
+	int age;
+	string name;
+	public:
+		details()
+		{
+			cout<<"Enter your age:";
+			cin>>age;
+			cout<<"Enter your name:";
+			cin>>name;
+		}
+		void display()
+		{
+			cout<<"your name is:"<<name<<endl;
+			cout<<"Your age is:"<<age<<endl;
+		}
+};
+
+class stud : public details
+{
+	long long er_no;
+	string email;
+	public:
+		stud()
+		{
+			cout<<"Enter your enrollment number:";
+			cin>>er_no;
+			cout<<"Enter your email:";
+			cin>>email;
+		}
+		void print()
+		{
+			cout<<"Your enrollment number is:"<<er_no<<endl;
+			cout<<"Your email id is:"<<email<<endl;
+		}
+};
+
+class employee:public details
+{
+	int emp_id;
+	float salary;
+	
+	public:
+		employee()
+		{
+			cout<<"Enter your employee id:";
+			cin>>emp_id;
+			cout<<"Enter your salary:";
+			cin>>salary;
+		}
+		void dispalydetails()
+		{
+			cout<<"Your employee id is:"<<emp_id<<endl;
+			cout<<"Your salary is:"<<salary<<endl;
+		}
+};
+
+int main()
+{
+	cout<<"Purohit Akruti K."<<endl;
+	cout<<"220130318033"<<endl;
+	stud s1;
+	employee e1;
+	s1.display();
+	s1.print();
+	e1.display();
+	e1.dispalydetails();
+	return 0;
+}
