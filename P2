@@ -1,0 +1,75 @@
+//write a c++ program to demonstrate multilevel inheritance
+
+#include<iostream>
+using namespace std;
+
+class details
+{
+	int age;
+	string name;
+	public:
+		void get()
+		{
+			cout<<"Enter your age:";
+			cin>>age;
+			cout<<"Enter your name:";
+			cin>>name;
+		}
+		void display()
+		{
+			cout<<"your name is:"<<name<<endl;
+			cout<<"Your age is:"<<age<<endl;
+		}
+};
+
+class stud : public details
+{
+	long long er_no;
+	string email;
+	public:
+		void getdata()
+		{
+			cout<<"Enter your enrollment number:";
+			cin>>er_no;
+			cout<<"Enter your email:";
+			cin>>email;
+		}
+		void print()
+		{
+			cout<<"Your enrollment number is:"<<er_no<<endl;
+			cout<<"Your email id is:"<<email<<endl;
+		}
+};
+
+class marks:public stud
+{
+	float sgpa1,sgpa2;
+	
+	public:
+		void getsgpa()
+		{
+			cout<<"Enter your spga of 1st sem:";
+			cin>>sgpa1;
+			cout<<"Enter your spga of 2nd sem:";
+			cin>>sgpa2;
+		}
+		void printsgpa()
+		{
+			cout<<"Your sgpa of 1st sem is:"<<sgpa1<<endl;
+			cout<<"Your sgpa of 2nd sem is:"<<sgpa2<<endl;
+		}
+};
+
+int main()
+{
+	cout<<"Purohit Akruti K."<<endl;
+	cout<<"220130318033"<<endl;
+	marks m1;
+	m1.get();
+	m1.getdata();
+	m1.getsgpa();
+	m1.display();
+	m1.print();
+	m1.printsgpa();
+	return 0;
+}
